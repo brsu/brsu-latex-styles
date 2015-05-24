@@ -1,0 +1,95 @@
+%%%%%%%%
+% Under Construction BRS-U LaTeX Theme
+% Updates by: Alex Moriarty
+% Original by: Jochen Wierum
+%%%%%%%%
+\mode<presentation>{
+	\useinnertheme{circles}
+	\useoutertheme{shadow}
+
+	\definecolor{brsugrey}{rgb}{0.9, 0.9, 0.9}
+	\usecolortheme[rgb={0, 0.594, 0.949}]{structure}
+
+	\setbeamercolor{palette primary}{use=structure, fg=structure.fg, bg=brsugrey}
+	\setbeamercolor{palette secondary}{bg=brsugrey}
+	\setbeamercolor{palette tertiary}{bg=brsugrey}
+	\setbeamercolor{palette quaternary}{bg=brsugrey}
+	\setbeamercolor{blackongrey}{bg=brsugrey,fg=black}
+	\setbeamercolor{blueongrey}{bg=brsugrey,fg=structure.fg}
+	\setbeamercovered{highly dynamic}
+	\setbeamertemplate{blocks}[rounded][shadow=true]
+	\setbeamercolor{block title}{use=structure, fg=white, bg=structure.fg}
+	\setbeamercolor{block title alerted}{use=alerted text, fg=white, bg=alerted text.fg!75!black}
+	\setbeamercolor{block title example}{parent=block title, use=block title, bg=block title.bg!60!bg}
+	\setbeamercolor{block body}{parent=normal text, use=block title, bg=block title.bg!10!bg}
+	\setbeamercolor{block body alerted}{parent=normal text, use=block title alerted, bg=block title alerted.bg!10!bg}
+	\setbeamercolor{block body example}{parent=normal text, use=block title example, bg=block title example.bg!10!bg}
+	
+	\defbeamertemplate*{sidebar right}{brsu theme}{}
+	\addtobeamertemplate{headline}{}{%
+	   \ifx\insertframetitle\@empty%
+	       \vspace{0.3cm}\hspace{0.3cm}%\insertlogo%
+	   \fi}
+	
+	\addtobeamertemplate{frametitle}{}{ %
+	    \ifx\insertframetitle\@empty %
+	        \strut\par %
+	    \else %
+	        \vbox to 1.438cm {%
+                \leftskip=-\beamer@leftmargin%
+                \rightskip=-\beamer@rightmargin%
+                {\vspace{0.3cm}\hspace{0.3cm}\par}%\insertlogo\par}%
+                \vbox{}
+        }%
+	   \fi}
+}
+
+%% This logo isn't placed well
+%%\logo{\includegraphics[width=2.5cm]{./images/brsu-logo}}
+
+% Foliennummern
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+
+% Spelling und Schrift
+\RequirePackage{babel}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+%\RequirePackage[scaled]{berasans}
+\renewcommand*\familydefault{\sfdefault}
+
+% PDF
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{}
+
+\RequirePackage{graphics}
+\RequirePackage{calc}
+
+\newcommand{\titledsubsection}{\@ifstar{\titledsubsections}{\titledsubsectionns}}
+\newcommand{\titledsubsections}[1]{\subsection*{#1} \titledsubsectionslide}
+\newcommand{\titledsubsectionns}[1]{\subsection{#1} \titledsubsectionslide}
+\newcommand{\titledsubsectionslide}{
+    \begin{frame}{\insertsubsection}
+        \begin{center}
+            \structure{
+                \Large \insertsection \\
+                \large \insertsubsection}
+        \end{center}
+    \end{frame}
+}
+
+\newcommand{\titledsection}{\@ifstar{\titledsections}{\titledsectionns}}
+\newcommand{\titledsections}[1]{\section*{#1} \titledsectionslide}
+\newcommand{\titledsectionns}[1]{\section{#1} \titledsectionslide}
+\newcommand{\titledsectionslide}{
+    \begin{frame}{\insertsection}
+        \begin{center}
+            \structure{\Large \insertsection}
+        \end{center}
+    \end{frame}
+}
+
+\definecolor{brsublue}{rgb}{0, 0.594, 0.949}
+\newcommand{\keyword}[1]{\textcolor{brsublue}{\texttt{#1}}}
+

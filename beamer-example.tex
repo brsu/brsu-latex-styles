@@ -1,0 +1,72 @@
+\documentclass[english,hyperref={pdfpagelabels=false}]{beamer}
+%\documentclass[ngerman,hyperref={pdfpagelabels=false},compress]{beamer}
+
+\usepackage{brsu}
+
+\title{Title}
+\subtitle{Subtitle}
+\author{John Doe} %
+\institute[Bonn-Rhein-Sieg University of Applied Sciences]{Bonn-Rhein-Sieg University of Applied Sciences}
+
+\date{\date{}}
+\subject{Section Title}
+
+%\beamerdefaultoverlayspecification{<+->}
+
+%%%%%
+% There are many different titles in the beamer class.
+% It's easy to used too many. 
+% \titledsection{} <- Running section title
+% \titledsubsection{} <- Running subsection title
+% \frametitle{}
+% \framesubtitle{}
+%%%%%
+
+%%%%%
+% The BRSU logo is commented out in the sty file.
+%%%%%
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \tableofcontents
+\end{frame}
+
+\titledsection{Section Title 1}
+
+\begin{frame}
+    \frametitle{This slide title}
+    \framesubtitle{This slide subtitle}
+    \begin{itemize}
+        \item Lorem Ipsum
+    \end{itemize}
+\end{frame}
+
+\section{Section Title 2}
+\titledsubsection{Subsection Title 1}
+
+\begin{frame}
+    \frametitle{This slide title}
+    \begin{itemize}
+        \item Lorem Ipsum
+    \end{itemize}
+\end{frame}
+
+\section{In Conclusion}
+\subsection{Questions and Answers}
+\begin{frame}
+    \frametitle{Questions}
+    \begin{block}{Questions}
+        Are there any questions?
+    \end{block}
+    \pause
+    \begin{block}{Thanks}
+        Thank you for your attention.
+    \end{block}
+\end{frame}
+
+\end{document}
